@@ -52,8 +52,34 @@ public class Main {
                     System.out.println("Conclusão de tarefa");
                     break;
 
+
                 case 4:
                     System.out.println("Exclusão de tarefa");
+
+                    if (tarefas.isEmpty()){
+                        System.out.println("Tarefa vazia");
+                    } else {
+
+                        for(int i = 0; i < tarefas.size(); i++){
+                            System.out.println( (i + 1 ) + "-" + tarefas.get(i));
+                        }
+
+                    }
+
+                    System.out.print("Digite o numero da tarefa escolhida para remoção:  ");
+                    int numeroEscolhido = scanner.nextInt();
+                    int indice = numeroEscolhido - 1;
+
+                    if (indice >= 0 && indice < tarefas.size()){
+                        System.out.println(tarefas.get(indice) + "removida");
+                        tarefas.remove(indice);
+
+                    } else {
+                        System.out.println("Numero de tarefa inválido");
+                    }
+
+
+
                     break;
 
                 case 0:
